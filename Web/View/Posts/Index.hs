@@ -5,12 +5,23 @@ data IndexView = IndexView { posts :: [Post] }
 
 instance View IndexView where
     html IndexView { .. } = [hsx|
+    
+    <div class="chat-notification">
+  <div class="chat-notification-logo-wrapper">
+    <img class="chat-notification-logo" src="/img/logo.svg" alt="ChitChat Logo">
+  </div>
+  <div class="chat-notification-content">
+    <h4 class="chat-notification-title">ChitChat</h4>
+    <p class="chat-notification-message">You have a new message!</p>
+  </div>
+</div>
+
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item active"><a href={PostsAction}>Posts</a></li>
             </ol>
         </nav>
-        <h1>Index <a href={pathTo NewPostAction} class="btn btn-primary ml-4">+ New</a></h1>
+        <h1>Index <a href={pathTo NewPostAction} class="">+ New</a></h1>
         <div class="table-responsive">
             <table class="table">
                 <thead>
