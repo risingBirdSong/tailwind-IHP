@@ -14,4 +14,5 @@ eval "$(direnv hook bash)"
 eval "$(direnv export bash)"
 
 # Finally start the dev server
-RunDevServer
+make tailwind-dev & RunDevServer
+
